@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Sumber Makmur Company</title>
+  <title>Sistem Informasi PT Sumber Makmur</title>
 
   <!-- Bootstrap -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -44,21 +44,21 @@
                 <ul class="main-nav">
                   <li><a href="#home">Home</a></li>
                   <li><a href="#testi">Testimoni</a></li>
-                  <li><a href="#about">About</a></li>
+                  <li><a href="#about">Tentang Kami</a></li>
                 </ul>
               </nav>
               <!-- <a href="#" class="menu"><img src="assets/menu.png"></a> -->
               <div class="hero-text">
-                <h1><span>Hello, We are</span><br>SUMMA.</h1>
-                <h3>Portfolio absensi untuk pegawai kami</h3>
-                <a href="admin/login" class="btn btn-lg btn-primary">Get Started</a>
-                <ul class="social-links">
+                <h1><span>Sistem Informasi</span><br>PT Sumber Makmur</h1>
+                <!-- <h3>Portfolio absensi untuk pegawai kami</h3> -->
+                <a href="admin/login" class="btn btn-lg btn-primary">Mulai</a>
+                <!-- <ul class="social-links">
                   <li class="label">Join we here</li>
                   <li><a href="#"><img src="assets/behance.png"></a></li>
                   <li><a href="#"><img src="assets/dribbble.png"></a></li>
                   <li><a href="#"><img src="assets/twitter.png"></a></li>
                   <li><a href="#"><img src="assets/github.png"></a></li>
-                </ul>
+                </ul> -->
               </div>
             </div>
           </div>
@@ -69,25 +69,28 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h4 class="sub-heading">Exclusively</h4>
-              <h1 class="heading purple"><span class="purple">works</span> with <br>CEO and Co-CEO</h1>
+              <h4 class="sub-heading">Hello</h4>
+              <h1 class="heading purple"><span class="purple">Introducing</span> our <br>architect</h1>
               <!-- Swiper -->
               @if($portfolioData->isEmpty())
               <p>No Data available.</p>
               @else
               <div class="swiper-container client-swiper d-flex justify-content-center align-items-center">
                 <div class="swiper-wrapper">
-                    @foreach ($portfolioData as $data)
-                    <div class="swiper-slide client-box text-center">
-                        <img src="{{ asset('storage/'.$data->image) }}" class="client-logo img-thumbnail large">
-                        <h3 class="text-left title">{{ $data->nama }}</h3>
-                        <p class="text-left tag">{{ $data->goal }}</p>
-                        <p class="text-left tag">Nim : <span>{{ $data->nim }}</span></p>
-                        <p class="text-left tag">{{ $data->email }}</p>
-                        <p class="text-left tag">{{ $data->telepon }}</p>
-                        {{-- <p class="text-left"><a href="#">Know More &#8594;</a></p> --}}
-                    </div>
-                    @endforeach
+                @foreach ($portfolioData as $data)
+    <div class="swiper-slide client-box text-center">
+        <div class="client-image-wrapper">
+            <img src="{{ asset('storage/'.$data->image) }}" class="client-logo img-thumbnail large" alt="{{ $data->nama }}">
+        </div>
+        <h3 class="text-left title">{{ $data->nama }}</h3>
+        <p class="text-left tag"><strong>Spesialisasi:</strong> <br> {{ $data->goal }}</p>
+        <p class="text-left tag"><strong>ID:</strong> <span>{{ $data->nim }}</span></p>
+        <p class="text-left tag"><strong>Email:</strong> <a href="mailto:{{ $data->email }}">{{ $data->email }}</a></p>
+        <p class="text-left tag"><strong>Telepon:</strong> <a href="tel:+{{ $data->phone }}">{{ $data->phone }}</a></p>
+        {{-- <p class="text-left"><a href="#">Know More &#8594;</a></p> --}}
+         </div>
+@endforeach
+
                 </div>
             </div>
             
@@ -107,8 +110,66 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h4 class="sub-heading">Happy</h4>
-              <h1 class="heading pink"><span class="pink">Client's</span> hello <br>testimonials</h1>
+              <h4 class="sub-heading">Layanan Kami</h4>
+              <h1 class="heading pink"><span class="pink">Jenis</span>  <br>Pelayanan</h1>
+            </div>
+          </div>  
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- Swiper -->
+              <div class="swiper-container testimonial-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide testimonial-box blue">
+                    <h1>Desain Rumah Tinggal</h1>
+                    <p>⦿ Desain modern dan fungsional.<br>
+                    ⦿ Disesuaikan dengan kebutuhan keluarga.<br>
+                    ⦿ Memaksimalkan kenyamanan dan estetika."</p>
+
+                  </div>
+                  <div class="swiper-slide testimonial-box yellow">
+                    <h1>Desain Ruko</h1>
+                    <p>⦿ Efisien dan hemat ruang.<br>
+⦿ Memiliki area usaha yang optimal.<br>
+⦿ Desain menarik untuk menarik pelanggan.</p>
+                  
+                  </div>
+                  <div class="swiper-slide testimonial-box purple">
+                    <h1>Desain Kantor</h1>
+                    <p>⦿ Elegan dan profesional.<br>
+⦿ Meningkatkan produktivitas tim.<br>
+⦿ Menggunakan konsep ruang yang fleksibel.</p>
+                   
+                  </div>
+                  <div class="swiper-slide testimonial-box yellow">
+                    <h1>Desain Interior</h1>
+                    <p>⦿ Tata ruang yang nyaman.<br>
+⦿ Memaksimalkan fungsi setiap area.<br>
+⦿ Sentuhan estetika yang memukau.</p>
+            
+                  </div>
+                  <di class="swiper-slide testimonial-box pink">
+                    <h1>Renovasi Bangunan</h1>
+                    <p>⦿ Solusi untuk memperbaiki struktur lama.<br>
+⦿ Penyesuaian desain sesuai kebutuhan baru.<br>
+⦿ Menambah nilai estetika dan fungsi.</p>
+                 
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="testi" class="testimonial">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h4 class="sub-heading">Apa Kata Mereka</h4>
+              <h1 class="heading pink"><span class="pink">Testimoni</span>  <br>klien</h1>
             </div>
           </div>  
         </div>
@@ -119,69 +180,44 @@
               <div class="swiper-container testimonial-swiper">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide testimonial-box yellow">
-                    <h1>Pixel Perfect design</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p>
+                    <h1>Rumah Tinggal</h1>
+                    <p>"Desain rumah tinggal ini sangat modern dan nyaman, sangat sesuai dengan kebutuhan keluarga kami."</p>
                     <div class="text-right">
-                      <p class="name">- Ari sang Pencari</p>
-                      <p class="designation">Founder, Arrow</p>
+                      <p class="name">-Ari</p>
+                      <p class="designation">CEO, PT. Ardi Jaya</p>
                     </div>
                   </div>
                   <div class="swiper-slide testimonial-box purple">
-                    <h1>Minimal and Clean</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p>
+                    <h1>Ruko</h1>
+                    <p>"Ruko yang dirancang sangat efisien dan memberi banyak ruang untuk usaha dan parkir."</p>
                     <div class="text-right">
-                      <p class="name">- Seniman Daffa</p>
-                      <p class="designation">CTO, Upside Down</p>
+                      <p class="name">-Daffa</p>
+                      <p class="designation">Pengusaha</p>
                     </div>
                   </div>
                   <div class="swiper-slide testimonial-box blue">
-                    <h1>Built with Bootstrap</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p>
+                    <h1>Kantor</h1>
+                    <p>"Desain kantor yang elegan dan fungsional, sangat mendukung produktivitas tim kami."</p>
                     <div class="text-right">
-                      <p class="name">- Yuan Sang Petualang</p>
-                      <p class="designation">Founder, Arrow</p>
+                      <p class="name">-Rian</p>
+                      <p class="designation">CEO, PT. Santoso Group</p>
                     </div>
                   </div>
                   <div class="swiper-slide testimonial-box pink">
-                    <h1>Responsive template</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p>
+                    <h1>Rumah Minimalis</h1>
+                    <p>"Desain rumah bergaya minimalis ini memberi kesan luas meskipun di lahan terbatas."</p>
                     <div class="text-right">
-                      <p class="name">- Sepuh Zidan</p>
-                      <p class="designation">CTO, Upside Down</p>
+                      <p class="name">-Zidan</p>
+                      <p class="designation">Arsitek</p>
                     </div>
                   </div>
-                  <div class="swiper-slide testimonial-box yellow">
-                    <h1>Pixel Perfect</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p>
+                  <di class="swiper-slide testimonial-box yellow">
+                    <h1>Apartemen</h1>
+                    <p>"Bangunan apartemen yang dirancang sangat modern dan memiliki fasilitas yang lengkap."</p>
                     <div class="text-right">
-                      <p class="name">- Bintang Dilangit</p>
-                      <p class="designation">Founder, Arrow</p>
+                      <p class="name">-Bintang</p>
+                      <p class="designation">Direktur, PT. Saputra Real Estate</p>
                     </div>
-                  </div>
-                  <div class="swiper-slide testimonial-box purple">
-                    <h1>Minimal and Clean</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p>
-                    <div class="text-right">
-                      <p class="name">- Anur sang Petarung</p>
-                      <p class="designation">CTO, Upside Down</p>
-                    </div>
-                  </div>
-                  <div class="swiper-slide testimonial-box blue">
-                    <h1>Pixel Perfect</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p>
-                    <div class="text-right">
-                      <p class="name">- King Saidi</p>
-                      <p class="designation">Founder, Arrow</p>
-                    </div>
-                  </div>
-                  <div class="swiper-slide testimonial-box pink">
-                    <h1>Minimal and Clean</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p>
-                    <div class="text-right">
-                      <p class="name">- Rian sang Pecinta Wanita</p>
-                      <p class="designation">CTO, Upside Down</p>
-                    </div>
-                  </div>
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
@@ -192,65 +228,53 @@
       </section>
 
       <!-- Statistics -->
-      <section class="stats">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-4 text-center stat-box">
-              <h1 class="purple"><span class="counter">3.2</span>k</h1>
-              <h3>Hours</h3>
-            </div>
-            <div class="col-md-4 text-center stat-box">
-              <h1 class="blue counter">217</h1>
-              <h3>Projects</h3>
-            </div>
-            <div class="col-md-4 text-center stat-box">
-              <h1 class="pink"><span class="counter">18.3</span>k</h1>
-              <h3>Cups of Coffee</h3>
-            </div>
-          </div>
-        </div>
-      </section>
+<section class="stats">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 text-center stat-box">
+        <h1 class="purple"><span class="counter">5.7</span>k</h1>
+        <h3>Hours of Design</h3>
+      </div>
+      <div class="col-md-4 text-center stat-box">
+        <h1 class="blue counter">320</h1>
+        <h3>Completed Projects</h3>
+      </div>
+      <div class="col-md-4 text-center stat-box">
+        <h1 class="pink"><span class="counter">45</span></h1>
+        <h3>Cities Covered</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       <!-- Contact Banner -->
-      <section id="about" class="contact-banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <h1>Tentang PT Sumber Makmur</h1>
-                    <p>
-                        PT Sumber Makmur adalah perusahaan yang berdedikasi untuk menyediakan solusi terbaik di bidang 
-                        pembuatan website absensi. 
-                        Dengan pengalaman bertahun-tahun, kami terus berkomitmen untuk memberikan inovasi, kualitas, dan 
-                        layanan terbaik kepada mitra dan pelanggan kami. 
-                    </p>
-                    <p>
-                        Kami percaya bahwa keberlanjutan dan efisiensi adalah kunci untuk membangun masa depan yang lebih baik. 
-                        Oleh karena itu, kami selalu mengedepankan nilai-nilai seperti integritas, kolaborasi, dan inovasi 
-                        dalam setiap langkah yang kami ambil.
-                    </p>
-                    <a href="/admin/login" class="btn btn-lg btn-primary">Pelajari Lebih Lanjut</a>
-                </div>
-            </div>
-        </div>
-    </section>
+<section id="about" class="contact-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1>Tentang PT Sumber Makmur</h1>
+                <p>
+                   
+PT Sumber Makmur adalah perusahaan arsitektur yang menyediakan solusi desain dan konstruksi terbaik. Dengan pengalaman bertahun-tahun, kami berkomitmen untuk memberikan inovasi, kualitas, dan layanan terbaik bagi mitra dan pelanggan. Kami mengutamakan keberlanjutan, efisiensi, dan kolaborasi dalam setiap proyek untuk menciptakan ruang yang fungsional dan inspiratif.
+              
+                </p>
+                <!-- <div class="team-info"> -->
     
 
-      <!-- Footer -->
-      <footer>
-        <div class="container-fluid">
-          <div class="row footer">
-            <div class="col-md-12 text-center">
-              <h1>Sumber<br><span>Makmur</span></h1>
-              <ul class="social-links">
-                <li><a href="#"><img src="assets/behance.png"></a></li>
-                <li><a href="#"><img src="assets/dribbble.png"></a></li>
-                <li><a href="#"><img src="assets/twitter.png"></a></li>
-                <li><a href="#"><img src="assets/github.png"></a></li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </footer>
+    </div>
+</section>
+
+    
+
+     <!-- Footer -->
+<footer class="footer-section">
+  <div class="container-fluid">
+    <div class="row footer align-items-center">
+      <div class="col-md-12 text-center">
+        <h1>Sumber<br><span>Makmur</span></h1>
+
 
       <!-- Some Javascript -->
       <script src="js/jquery-2.1.1.js"></script>

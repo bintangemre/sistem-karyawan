@@ -41,7 +41,7 @@ class PortfolioResource extends Resource
                     ->maxLength(255),
 
                 TextArea::make('goal')
-                    ->label('Goal')
+                    ->label('Spesialisasi')
                     ->required(),
 
                 TextInput::make('phone')
@@ -64,7 +64,7 @@ class PortfolioResource extends Resource
                 TextColumn::make('nama')->sortable()->searchable()->label('Nama'),
                 TextColumn::make('nim')->sortable()->searchable()->label('NIM'),
                 TextColumn::make('email')->sortable()->searchable()->label('Email'),
-                TextColumn::make('goal')->label('Goal'),
+                TextColumn::make('goal')->label('Spesialisasi'),
                 TextColumn::make('phone')->label('Nomor Telepon'),
                 Tables\Columns\ImageColumn::make('image')
                 ->label('Foto')
